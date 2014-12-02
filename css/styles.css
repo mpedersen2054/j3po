@@ -62,7 +62,7 @@ header {
       line-height: 0.6; }
 
 #results {
-  margin-top: 40px; }
+  margin-top: 3em; }
   #results .user {
     background-color: yellow;
     width: 48%;
@@ -70,16 +70,24 @@ header {
     float: left;
     margin-bottom: 20px;
     margin-left: 1%;
-    margin-right: 1%; }
+    margin-right: 1%;
+    border-radius: 4px; }
     #results .user .left-meta {
       float: left;
-      margin-right: 1.2em; }
+      margin-right: 2em; }
+      #results .user .left-meta img {
+        border-radius: 4px; }
     #results .user .right-meta .name {
       font-size: 1.6em;
       padding: 0.8em;
       background-color: lightblue; }
+      #results .user .right-meta .name a {
+        text-decoration: none;
+        color: #000; }
     #results .user .right-meta .stats {
       padding-top: 10px;
-      font-size: 1.2em; }
+      font-size: 1.1em; }
+      #results .user .right-meta .stats p {
+        margin-bottom: 4px; }
 
 /*# sourceMappingURL=styles.css.map */
