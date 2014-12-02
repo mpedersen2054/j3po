@@ -1,5 +1,6 @@
 
 $(function() {
+    // $('#results').html('<h1 class="no-entry">Nothing Entered</h1>');
 
     $('#search-results').on('submit', function(event) {
         var term = $('#query').val();
@@ -22,6 +23,7 @@ $(function() {
     }
 
     function showResults(results) {
+        $('#query').val('');
 
         for (var i=0; i<results.length; i++) {
             var img = results[i].user.profile_image,
