@@ -1,6 +1,6 @@
-
 $(function() {
-    // $('#results').html('<h1 class="no-entry">Nothing Entered</h1>');
+    $('#query').focus();
+    $('#results .container').html('<h1 class="no-entry">No programming language entered</h1>');
 
     $('#search-results').on('submit', function(event) {
         var term = $('#query').val();
@@ -23,7 +23,11 @@ $(function() {
     }
 
     function showResults(results) {
-        $('#query').val('');
+        $('#results .container').html('');
+
+        if (results.length == 0) {
+            $('#results .container').html('no results found')
+        }
 
         for (var i=0; i<results.length; i++) {
             var img = results[i].user.profile_image,
