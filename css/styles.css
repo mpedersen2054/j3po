@@ -5,7 +5,12 @@ html {
   font-family: "Lato", sans-serif;
   font-size: 16px;
   line-height: 1.2;
-  letter-spacing: 1.2px; }
+  letter-spacing: 1.2px;
+  position: relative;
+  min-height: 100%; }
+
+body {
+  margin: 0 0 75px; }
 
 .container {
   width: 80%;
@@ -18,6 +23,9 @@ html {
 
 .pull-right {
   float: right; }
+
+.red {
+  color: red; }
 
 header {
   background-color: #eee;
@@ -64,7 +72,7 @@ header {
       line-height: 0.6; }
 
 #results {
-  margin-top: 3em; }
+  margin: 3em auto; }
   #results li {
     list-style: none; }
   #results .user {
@@ -92,19 +100,38 @@ header {
         text-decoration: none;
         list-style: none;
         color: #000; }
+        #results .user .right-meta .name a:hover {
+          color: red; }
     #results .user .right-meta li .user {
       list-style: none; }
     #results .user .right-meta .stats {
       padding-top: 10px;
       font-size: 1.1em; }
       #results .user .right-meta .stats p {
-        margin-bottom: 4px; }
+        margin-bottom: 4px;
+        font-weight: 300; }
 
 h1.no-entry {
   text-align: center;
-  font-size: 4em;
-  margin-top: 40px;
+  font-size: 2em;
+  margin-top: 20px;
   text-decoration: underline;
-  color: red; }
+  text-transform: uppercase;
+  color: #555; }
+
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 30px;
+  width: 100%;
+  background-color: #EEE;
+  font-weight: 400;
+  padding-top: 7px;
+  text-align: center;
+  letter-spacing: 1.5px; }
+
+.red {
+  text-transform: uppercase; }
 
 /*# sourceMappingURL=styles.css.map */

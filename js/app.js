@@ -1,16 +1,16 @@
-$(function() {
+(function($, document) {
     $('#query').focus();
-    $('#results .container').html('<h1 class="no-entry">No programming language entered</h1>');
+    $('#results .container').html('<h1 class="no-entry">No Results</h1>');
 
     $('#search-results').on('submit', function(event) {
         var term = $('#query').val();
-        event.preventDefault();
 
         handleRequest(term);
+        event.preventDefault();
     });
 
     function handleRequest(searchTerm) {
-        url = 'http://api.stackexchange.com/2.2/tags/'+searchTerm+'/top-answerers/all_time';
+        var url = 'http://api.stackexchange.com/2.2/tags/'+searchTerm+'/top-answerers/all_time';
         params = {
             page: 1,
             pagesize: 20,
@@ -26,7 +26,7 @@ $(function() {
         $('#results .container').html('');
 
         if (results.length == 0) {
-            $('#results .container').html('no results found')
+            $('#results .container').html('no results found');
         }
 
         for (var i=0; i<results.length; i++) {
@@ -36,11 +36,11 @@ $(function() {
                 score = results[i].score,
                 numPosts = results[i].post_count;
 
-            var template = intoTemplate(img,name,link);
+            var template = htmlTemplate(img,name,link);
             $('#results .container').append(template);
         }
 
-        function intoTemplate(img,name,link) {
+        function htmlTemplate(img,name,link) {
             var templ = '';
             templ+="<li class='user'>"
             templ+="<div class='left-meta'>"
@@ -58,7 +58,6 @@ $(function() {
             templ+="</li>"
             return templ;
         }
-
     }
 
-})();
+})(jQuery, document);
