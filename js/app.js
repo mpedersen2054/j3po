@@ -25,7 +25,7 @@
     function showResults(results) {
         $('#results .container').html('');
 
-        if (results.length == 0) {
+        if (results.length === 0) {
             $('#results .container').html('no results found');
         }
 
